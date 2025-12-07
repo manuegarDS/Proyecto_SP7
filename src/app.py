@@ -16,6 +16,9 @@ hist_button = st.button('Construir histograma')
 # Crear otro botón en la aplicación Streamlit
 disp_button = st.button('Construir Diagrama de dispersion')
 
+# Crear otro botón en la aplicación Streamlit
+df_button = st.button('Desplegar muestra del DataFrame')
+
 # Lógica a ejecutar cuando se hace clic en el botón
 if hist_button:
     # Escribir un mensaje en la aplicación
@@ -49,3 +52,6 @@ if disp_button:
     # Mostrar el gráfico Plotly interactivo en la aplicación Streamlit
     # 'use_container_width=True' ajusta el ancho del gráfico al contenedor
     st.plotly_chart(fig, use_container_width=True)
+
+if df_button:
+    st.write(car_data.sample(n=25))
